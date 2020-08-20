@@ -17,7 +17,7 @@ for i in r:
 		_variants=[]
 		for j in i['variants']:
 			_variants.append({
-				"channel":i['channel'],
+				"channel":j['channel'],
 				"properties":[_j.get('tag', '') for _j in j['options']]
 			})
 		variants.append({
@@ -27,7 +27,7 @@ for i in r:
 		})
 		
 with open('cosmetics.json', 'w') as f:
-	json.dump(cosmetics, f)
+	json.dump(cosmetics, f, indent='\t')
 	
 with open('variants.json', 'w') as f:
-	json.dump(variants, f)
+	json.dump(variants, f, indent='\t')
